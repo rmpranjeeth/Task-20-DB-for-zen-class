@@ -1,0 +1,17 @@
+1. Find all the topics and tasks which are thought in the month of October 
+Ans: db.data.find({"date":/Oct/}).pretty();
+
+2. Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+Ans: db.company.find({"date of visit":{$gte:"15-oct-2020,$lte:"31-oct-2020"}}).pretty();
+
+3. Find all the company drives and students who are appeared for the placement
+Ans: db.data.find({"appeared for the placement":"yes"}).pretty();
+
+4. Find the number of problems solved by the user in codekata
+Ans: db.data.find({"codeKata" : {$gt:0}}).pretty();
+
+5. Find all the mentors with who has the mentee's count more than 15
+Ans: db.mentors.find({"No of Mentee's" : {$gt:15}}).pretty();
+
+6. Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+Ans: db.data.find({"date":{$gte:"15-Oct-2020,$lte:"31-Oct-2020"}, attendance:"a", isTaskSubmitted:"no"}).pretty();
